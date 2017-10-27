@@ -12,13 +12,13 @@ import random
 
 def field(items, *args):
     assert len(args) > 0
-    # Необходимо реализовать генератор 
+    # Необходимо реализовать генератор (итерируемый объект, но прочитать можно лишь 1 раз)
     if len(args) == 1:
         for i in items:
             for key in args:
                 a = i.get(key)
                 if a is not None:
-                    yield a
+                    yield a #вернуть значение а
     else:
         for i in items:
             dict = {}
