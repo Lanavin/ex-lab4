@@ -6,3 +6,9 @@
 #   sleep(5.5)
 #
 # После завершения блока должно вывестись в консоль примерно 5.5
+from datetime import datetime
+class timer:
+    def __enter__(self):
+        self.now = datetime.now()
+    def __exit__(self, exp_type, exp_value, traceback):
+        print(datetime.now() - self.now)
