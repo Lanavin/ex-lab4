@@ -35,3 +35,16 @@
 # test_4
 # 1
 # 2
+def print_result(func):
+    def wrapper(*args, **kwargs):
+        print(func.__name__)
+        a = func(*args, **kwargs)
+        if isinstance(a, list):
+            print('\n'.join(map(str, a)))
+        elif isinstance(a, dict):
+            for key, value in a.items():
+                print(key, '=', value)
+        else:
+            print(a)
+        return a
+    return wrapper
